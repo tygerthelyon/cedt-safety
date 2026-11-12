@@ -6,6 +6,10 @@ A departmental safety resources website developed for the Centre for Emerging De
 
 The website serves as the central health and safety reference for faculty, researchers, graduate students, and staff working in facilities across the CEDT.
 
+| Home & Emergency Quick-Access | Chemical Hazards & Safety Protocols |
+| :---: | :---: |
+| ![CEDT Safety Home Portal](assets/images/cedt-home-preview.png) | ![Chemical Hazards and WHMIS Protocols](assets/images/cedt-chemical-hazards.png) |
+
 ### Architecture
 
 * HTML, CSS, and JavaScript with zero third-party framework runtime dependencies. Loads instantaneously and operates fully offline or over static web hosting.
