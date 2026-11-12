@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Disallow: /local-site-template.html

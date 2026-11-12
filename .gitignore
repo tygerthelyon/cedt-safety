@@ -1,0 +1,13 @@
+# Backups and archives
+H&S Website (zip backups)/
+*.zip
+
+# Operating system artifacts
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc

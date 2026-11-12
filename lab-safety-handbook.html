@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEDT / Engineering Physics — Lab Safety Handbook</title>
+<meta name="description" content="Summary of the McMaster University Laboratory Manual, highlighting what applies specifically to CEDT and Engineering Physics facilities.">
+
+<!-- Author: Carter Yott, Summer 2026. Based on the previous CEDT Safety site (mcmaster.ca/CEDTsafety) by Graham Pearson, with support from Nebile Isik Goktas and especially, Doris Stevanovic. -->
+
+<!-- Shared stylesheet. Edit styles.css once; every page updates. -->
+<link rel="icon" href="assets/images/cedt-logo.png">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Styles used only by THIS page. Everything shared lives in
+     styles.css; do not add site-wide rules here. -->
+<style>
+details.manual-section {
+  border: 1px solid #e0c2c9;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+details.manual-section summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  background: #fff1f1;
+  font-weight: bold;
+  color: #330000;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+details.manual-section summary::-webkit-details-marker { display: none; }
+
+details.manual-section summary::before {
+  content: "▸ ";
+  color: #990033;
+  display: inline-block;
+  width: 14px;
+}
+
+details.manual-section[open] summary::before {
+  content: "▾ ";
+}
+
+details.manual-section .section-body {
+  padding: 4px 18px 14px 18px;
+  font-size: 15px;
+}
+
+details.manual-section .section-body h3 {
+  font-size: 15px;
+  color: #990033;
+  margin: 12px 0 4px;
+}
+
+details.manual-section .section-body ul {
+  margin: 4px 0 10px 18px;
+  padding: 0;
+}
+
+details.manual-section .section-body li {
+  margin-bottom: 3px;
+}
+
+.intro-note {
+  max-width: 530px;
+}
+</style>
+
+<!-- Shared scripts: page layout + current-page highlight + site-wide search. `defer` lets the HTML parse first. -->
+<script src="shared-layout.js" defer></script>
+<script src="search.js" defer></script>
+<script src="assets/search-index.js" defer></script>
+<script src="sitesearch.js" defer></script>
+
+</head>
+
+<body>
+<noscript><p>This site needs JavaScript enabled to display its navigation menu and search. <a href="index.html">Return to the home page</a> or visit <a href="https://www.mcmaster.ca/">McMaster University</a>.</p></noscript>
+<main id="main" class="pagecontent">
+
+      <h1>Lab Safety Handbook</h1>
+      <h2>CEDT / Engineering Physics</h2>
+
+      <div class="floatright">
+        <div class="widget emergency">
+          <div class="widget-head">In an Emergency</div>
+          <div class="widget-body">
+            <div class="emergency-row"><span>Fire / Medical / Security (McMaster phone)</span><span class="num">Ext. 88</span></div>
+            <div class="emergency-row"><span>From a cell phone</span><span class="num">905-522-4135</span></div>
+            <div class="emergency-row"><span>UHS (non-emergency)</span><span class="num">Ext. 24352</span></div>
+            <div class="emergency-row"><span>Security (non-emergency)</span><span class="num">Ext. 24281</span></div>
+            <div class="emergency-row"><span>Poison Control</span><span class="num">1-800-268-9017</span></div>
+            <div class="emergency-row"><span>Hospital (McMaster site)</span><span class="num">Ext. 5555</span></div>
+          </div>
+        </div>
+      </div><!-- end floatright -->
+
+      <p>This page summarizes the <strong>McMaster University Laboratory Manual</strong>, the official safety reference issued by University Health and Safety (UHS), and highlights what is specifically relevant to CEDT and Engineering Physics facilities.
+        It replaces the older "Faculty of Engineering and Faculty of Science Safety Handbook (Version 2.0)" previously hosted on this site, which is now out of date.</p>
+
+      <div class="note-box intro-note">
+        <strong>This page is a summary, not a replacement.</strong> Every person working or intending to work in a CEDT or Eng Phys laboratory is encouraged to read from the full
+        <a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FMcMaster%20University%20Laboratory%20Manual%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">McMaster University Laboratory Manual</a>
+        and consult the <a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/lab-safety/" target="_blank">UHS Lab Safety page</a> for the most current
+        version of any policy, form, or SOP referenced below.
+      </div>
+
+      <hr>
+
+      <!-- responsibilities -->
+      <details class="manual-section" id="responsibilities" open>
+        <summary>1. Responsibilities for Safety</summary>
+        <div class="section-body">
+          <p>Safety at McMaster is a shared responsibility between the University, supervisors, and individual workers. The Occupational Health and Safety Act (OHSA)
+            sets out specific legal duties for each:</p>
+
+          <h3>Employer (McMaster University)</h3>
+          <ul>
+            <li>Ensures equipment, materials, and protective devices are in good condition.</li>
+            <li>Provides information, instruction, and supervision to protect worker health and safety.</li>
+            <li>Appoints competent supervisors and informs workers of known hazards.</li>
+            <li>Maintains a written health and safety policy, reviewed at least annually.</li>
+          </ul>
+
+          <h3>Supervisors</h3>
+          <ul>
+            <li>Ensures workers follow the Act and use required protective devices.</li>
+            <li>Advises workers of potential or actual danger.</li>
+            <li>Provides written instructions on protective measures and procedures where required.</li>
+            <li>Is responsible for workplace-specific training, including chemical handling, equipment safety, and procedures unique to a given project or lab.</li>
+          </ul>
+
+          <h3>Workers (including students and researchers)</h3>
+          <ul>
+            <li>Works in compliance with the Act and uses required protective equipment.</li>
+            <li>Reports any hazard, defect in protective gear, or contravention of the Act.</li>
+            <li>Does not remove or alter any protective device.</li>
+            <li>Does not operate equipment in a way that could endanger themselves or others.</li>
+          </ul>
+
+          <p>See this site's dedicated pages on
+            <a href="employer-responsibilities.html">Employer</a>,
+            <a href="supervisor-responsibilities.html">Supervisor</a>, and
+            <a href="worker-responsibilities.html">Worker</a> responsibilities for more detail.</p>
+
+          <h3>Right to Refuse Unsafe Work</h3>
+          <p>Any worker who believes a task, piece of equipment, or workplace condition is likely to endanger themselves or another person has the right to refuse that work,
+            following the specific procedure set out in Section 43 of the OHSA. Concerns should first be raised with your supervisor; if unresolved, they can be brought to the
+            Joint Health and Safety Committee (JHSC), and ultimately to UHS. See <a href="employee-rights.html">Employee Rights</a> for the right to refuse work alongside the right to know and the right to participate.</p>
+        </div>
+      </details>
+
+      <!-- emergency procedures -->
+      <details class="manual-section" id="emergency">
+        <summary>2. Emergency Procedures</summary>
+        <div class="section-body">
+
+          <h3><img src="assets/images/pictograms/fire-extinguisher.png" class="hazard-pictogram-sm" alt="">Fire</h3>
+          <ul>
+            <li>Immediately vacate the building via the nearest exit route. Do not use elevators.</li>
+            <li>If a fire breaks out in your work area, shout "Fire!" and pull the nearest fire alarm.</li>
+            <li>Only attempt to extinguish a small fire if you can do so promptly and safely; otherwise evacuate and close the door behind you.</li>
+            <li>Dial <strong>88</strong> (or <strong>905-522-4135</strong> from a cell phone) and give your exact location and details.</li>
+            <li>See <a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/" target="_blank" class="doc-ref">RMM 1201</a>: Fire Safety Plan for full building-specific procedures.</li>
+          </ul>
+
+          <h3>Clothing on Fire</h3>
+          <ul>
+            <li>Douse with water from the nearest safety shower immediately, or</li>
+            <li>Roll on the floor, or</li>
+            <li>Smother with a fire blanket (lay the person down first, do not wrap a standing person).</li>
+            <li>Do not use a fire extinguisher directly on a person.</li>
+          </ul>
+
+          <h3><img src="assets/images/pictograms/eyewash-station.png" class="hazard-pictogram-sm" alt="">Chemical Spill on Body / in Eyes</h3>
+          <ul>
+            <li>Flush the affected area with water immediately. Use the emergency shower for skin contact, or flush eyes for at least 15 minutes at an eye-wash station.</li>
+            <li>Remove contaminated clothing.</li>
+            <li>Call <strong>88</strong> if medical aid is required, and bring the Safety Data Sheet (SDS) for the chemical involved.</li>
+          </ul>
+
+          <h3><img src="assets/images/pictograms/general-warning.png" class="hazard-pictogram-sm" alt="">Chemical Spill (Lab)</h3>
+          <ul>
+            <li>If you can safely manage the spill: eliminate ignition sources, contain the spill with appropriate absorbent material, and ensure fume hoods are running.</li>
+            <li>If the spill is large, generates hazardous vapours, or you are unsure: evacuate, post warning signs, and call <strong>88</strong>.</li>
+            <li>Refer to the current <a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FChemical%20Spill%20Response%20Guidelines%20%2D%20Minor%20and%20Major%20Spills%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">Chemical Spill Response Guidelines (Minor and Major Spills)</a> for the full decision process.</li>
+          </ul>
+
+          <h3><img src="assets/images/pictograms/first-aid.png" class="hazard-pictogram-sm" alt="">Medical Emergency</h3>
+          <ul>
+            <li>For minor injuries, seek first aid and follow up with a medical professional if needed.</li>
+            <li>For major injuries, call <strong>88</strong>, describe the emergency and location, and stay with the injured person. Do not move them unless they are in further danger.</li>
+          </ul>
+
+          <div class="note-box">
+            <strong>All incidents must be reported within 24 hours</strong> — not 2 days, as stated in the older handbook — using the
+            <a href="https://hr.mcmaster.ca/app/uploads/2018/11/injury-incident-report-fillable-1-36.pdf" target="_blank">Injury/Incident Report form</a>, submitted to UHS (Gilmour Hall 304) or, for Health Sciences locations, the Faculty of Health Sciences Safety Office.
+          </div>
+        </div>
+      </details>
+
+      <!-- WHMIS and SDS -->
+      <details class="manual-section" id="whmis">
+        <summary>3. WHMIS &amp; Safety Data Sheets (SDS)</summary>
+        <div class="section-body">
+          <p><strong>WHMIS (Workplace Hazardous Materials Information System)</strong> is Canada-wide "right to know" legislation: anyone working with or near hazardous materials must
+            complete WHMIS training before starting work, and must know how to read product labels and Safety Data Sheets.</p>
+
+          <div class="note-box">
+            <strong>Note:</strong> The old hazard classification system (Classes A&ndash;F, described in the previous version of this handbook) was replaced by
+            WHMIS 2015, which is aligned with the Globally Harmonized System (GHS) of pictograms. See the
+            <a href="chemical-hazards.html#ghs-pictograms">GHS/WHMIS Pictograms</a> reference on this site's Chemical Hazards page.
+          </div>
+
+          <p>Material Safety Data Sheets (MSDS) have likewise been replaced by the standardized <strong>Safety Data Sheet (SDS)</strong> format. Before working with any
+            hazardous material, you must read its SDS. Some materials also carry additional legal requirements — see <a href="designated-substances.html">Designated Substances</a>
+            for hazards like asbestos and lead. SDS access points for CEDT / Eng Phys include:</p>
+          <ul>
+            <li>The <a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/SDS%20Database%20Search%203E%20SDS.pdf?csf=1&web=1&e=zfPm45" target="_blank">SDS Database Search</a> tool (3E Database, accessible university-wide).</li>
+            <li>Your lab's own SDS binder or local inventory (check with your supervisor).</li>
+            <li>See the <a href="SDSinfo.html">SDS Info</a> page on this site for more detail.</li>
+          </ul>
+
+          <p>For a refresher on current pictograms and label elements, see
+            <a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/WHMIS%20Pictograms%20and%20Hazards.pdf?csf=1&web=1&e=mNH8sS" target="_blank">WHMIS Pictograms and Hazards</a>
+            and <a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/WHMIS%20-%20Key%20Updates.pdf?csf=1&web=1&e=cbLUJe" target="_blank">WHMIS – Key Updates</a>.</p>
+        </div>
+      </details>
+
+      <!-- PPE -->
+      <details class="manual-section" id="ppe">
+        <summary>4. Personal Protective Equipment (PPE)</summary>
+        <div class="section-body">
+          <p>For any work in a laboratory, appropriate PPE is required, typically a lab coat, eye protection, gloves, and closed-toe footwear at minimum.
+            Your supervisor is responsible for identifying and supplying the PPE required for your specific work; you are responsible for using it correctly and
+            maintaining it in good condition.</p>
+
+          <h3><img src="assets/images/pictograms/gloves.png" class="hazard-pictogram-sm" alt="">Gloves</h3>
+          <p>Different glove materials offer different chemical resistance. Check compatibility before starting work. Nitrile and neoprene gloves offer broad chemical
+            protection, but always verify against the specific chemical's SDS. Remove gloves before leaving the lab.</p>
+
+          <h3><img src="assets/images/pictograms/eye-protection.png" class="hazard-pictogram-sm" alt="">Eye Protection</h3>
+          <p>Contact lenses should not be worn while working with chemicals. Depending on the task, safety glasses, chemical splash goggles, or a full face shield
+            may be required. Follow your supervisor's procedures for the specific hazard.</p>
+
+          <h3><img src="assets/images/pictograms/protective-clothing.png" class="hazard-pictogram-sm" alt="">Lab Coats</h3>
+          <p>Lab coats should be worn when working with hazardous materials and should not be worn outside the lab (except when moving directly between labs).
+            Contaminated lab coats should never be laundered at home.</p>
+
+          <p>See the <a href="protective-equipment.html">Protective Equipment</a> page on this site for the full list of PPE available through CEDT/Eng Phys and how to request it.</p>
+        </div>
+      </details>
+
+      <!-- fume hoods and equipment -->
+      <details class="manual-section" id="fumehoods">
+        <summary>5. Fume Hoods &amp; Lab Equipment</summary>
+        <div class="section-body">
+          <p>Properly functioning fume hoods are a critical safety device. Follow these core operating guidelines:</p>
+          <ul>
+            <li>Do all work involving hazardous or malodorous materials inside an operating fume hood.</li>
+            <li>Keep the sash closed whenever the hood is on and unattended, and during any non-"hands-on" portion of an experiment.</li>
+            <li>Keep chemicals and equipment at least 6 inches behind the sash.</li>
+            <li>Never use a hood if the exhaust system is not running.</li>
+            <li>The hood is not a substitute for PPE. Gloves, eye protection, and other PPE are still required.</li>
+          </ul>
+          <p>For specialized fume hood types specific to certain processes, see
+            <a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FGuidelines%20for%20the%20Safe%20Use%20of%20Ductless%20Hoods%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">Guidelines for the Safe Use of Ductless Hoods</a>.</p>
+
+          <p>If you are closing out or repurposing a lab space, the
+            <a href="https://hr.mcmaster.ca/app/uploads/2020/11/Lab-Decommission-2020.pdf" target="_blank">Lab Decommission</a> guide outlines the required steps for safely
+            clearing equipment and hazardous materials.</p>
+        </div>
+      </details>
+
+      <!-- chemical storage and waste -->
+      <details class="manual-section" id="chemicals">
+        <summary>6. Chemical Storage &amp; Waste Disposal</summary>
+        <div class="section-body">
+          <p>Store chemicals according to compatibility, not alphabetically. Keep oxidizers, water-reactives, flammables, acids, and bases separated from one
+            another, and ensure all containers are in good condition and properly labelled. See <a href="chemical-hazards.html">Chemical Hazards</a> for
+            hazard categories, HF-specific precautions, and gas cylinder handling.</p>
+
+          <div class="note-box">
+            <strong>No hazardous material is to be disposed of down a water drain or in a generic trash can.</strong>
+            All hazardous waste must be identified, safely contained, and disposed of via the established waste streams.
+          </div>
+
+          <p>For complete, current chemical storage and compatibility guidance, including specific rules for peroxide-forming chemicals, perchloric acid, and
+            corrosives, see the official <a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/Storage%20of%20Chemicals%20in%20the%20Lab.pdf?csf=1&web=1&e=CtZ2Ys" target="_blank">Storage of Chemicals in the Lab</a> guideline.</p>
+
+          <p>For chemical and biohazardous waste disposal procedures specific to your area, see the
+            <a href="waste-management.html">Waste Management</a> page on this site, and McMaster's
+            <a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/lab-safety/waste/" target="_blank">Waste Disposal Processes</a> page for chemical and biohazardous waste.</p>
+
+          <h3>Maintaining Your Chemical Inventory</h3>
+          <p>All hazardous materials must be logged in <a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/lab-safety/mcmaster-chemical-inventory-system/" target="_blank">McMaster's Chemical Inventory System</a> and kept up to date. New purchases should be added immediately, and disposed items removed.</p>
+        </div>
+      </details>
+
+      <!-- compressed gases and cryogens -->
+      <details class="manual-section" id="gases">
+        <summary>7. Compressed Gases &amp; Cryogens</summary>
+        <div class="section-body">
+          <ul>
+            <li>Cylinders must be properly secured at all times, and the valve protection cap kept on when not connected to a regulator.</li>
+            <li>Never store full and empty cylinders together.</li>
+            <li>Move cylinders only with a suitable cart. Never lift by the collar.</li>
+            <li>Toxic, flammable, or corrosive gases must be used in a properly functioning fume hood.</li>
+          </ul>
+          <p>Cryogens (e.g., liquid nitrogen) present additional hazards: asphyxiation, frostbite, and pressure-related explosion risk. Always wear a face shield
+            and insulated gloves, and use only approved containers designed to withstand extreme cold.</p>
+          <p>This is especially relevant for CEDT cleanroom and growth lab processes. See the
+            <a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FHydrogen%20Fluoride%20Emergency%20Protocol%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">Hydrogen Fluoride Emergency Protocol</a>
+            if your work involves HF, and the <a href="mandatory-training.html">Mandatory Training</a> page for the current Gas Cylinder and Hydrogen Fluoride course requirements.</p>
+        </div>
+      </details>
+
+      <!-- radiation, laser, electrical -->
+      <details class="manual-section" id="physical-hazards">
+        <summary>8. Radiation, Laser &amp; Electrical Safety</summary>
+        <div class="section-body">
+          <h3><img src="assets/images/pictograms/radiation-trefoil.png" class="hazard-pictogram-sm" alt="">Radiation &amp; X-Rays</h3>
+          <p>All ionizing radiation matters (isotopes, X-ray generators) are governed by <a href="https://healthphysics.mcmaster.ca/" target="_blank">Health Physics</a>.
+            Radiation safety policies must be strictly followed, and warning signs displayed near any X-ray source. See <a href="radiation-hazards.html">Radiation Hazards</a> for full detail.</p>
+
+          <h3><img src="assets/images/pictograms/laser-hazard.png" class="hazard-pictogram-sm" alt="">Laser Safety</h3>
+          <ul>
+            <li>Always wear eye protection rated for the specific wavelength and power level in use.</li>
+            <li>Never look directly at the beam or pump source.</li>
+            <li>Keep beams at or below waist height where possible, and post warning signs in laser work areas.</li>
+          </ul>
+          <p>See <a href="laser-hazards.html">Laser Hazards</a> for hazard classifications, exposure limits, and protective eyewear requirements.</p>
+
+          <h3><img src="assets/images/pictograms/electrical-hazard.png" class="hazard-pictogram-sm" alt="">Electrical Safety</h3>
+          <ul>
+            <li>All electrical equipment must be properly grounded and CSA-approved (or an equivalent recognized standard).</li>
+            <li>Never remove the ground pin from a 3-prong plug.</li>
+            <li>Only qualified, trained personnel should repair or modify electrical equipment.</li>
+            <li>Frayed wires or cords must not be used.</li>
+          </ul>
+          <p>See <a href="electrical-hazards.html">Electrical Hazards</a> for shock and fire risk detail specific to CEDT/Eng Phys lab equipment.</p>
+
+          <p>These hazards are directly relevant to CEDT cleanroom and growth lab equipment. See <a href="hazard-awareness.html">Hazard Awareness</a> for
+            facility-specific guidance, and the <a href="mandatory-training.html">Mandatory Training</a> page for Laser Safety and Basic Electricity course requirements.</p>
+        </div>
+      </details>
+
+      <!-- incident reports -->
+      <details class="manual-section" id="reporting">
+        <summary>9. Incident Reporting</summary>
+        <div class="section-body">
+          <p>An "incident" includes any accident, injury, or near-miss, even if no one was hurt. All incidents must be reported to your supervisor as soon as
+            possible, and a formal <a href="https://hr.mcmaster.ca/app/uploads/2018/11/injury-incident-report-fillable-1-36.pdf" target="_blank">Injury/Incident Report</a>
+            completed <strong>within 24 hours</strong>.</p>
+          <ul>
+            <li>The report may be completed by the person involved, a witness, or the supervisor.</li>
+            <li>It must be signed by both the supervisor and the person reporting.</li>
+            <li>For critical injuries, the supervisor must immediately notify UHS and ensure the incident scene remains undisturbed until cleared.</li>
+          </ul>
+          <p>See the <a href="incident-reports.html">Incident Reports</a> page on this site for full instructions and where to submit the form.</p>
+        </div>
+      </details>
+
+      <hr>
+
+      <!-- full manual and resources -->
+      <h2 id="resources">Full Handbook &amp; Related Resources</h2>
+      <p>The summaries above are drawn from the current McMaster University Laboratory Manual and the standalone guidance documents maintained by
+        University Health and Safety. These are the authoritative sources; always check them directly for full detail, as they are updated more frequently than this page.</p>
+
+      <ul class="resource-list">
+        <li><a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FMcMaster%20University%20Laboratory%20Manual%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">McMaster University Laboratory Manual</a></li>
+        <li><a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/lab-safety/" target="_blank">UHS Lab Safety</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FChemical%20Spill%20Response%20Guidelines%20%2D%20Minor%20and%20Major%20Spills%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">Chemical Spill Response Guidelines</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/Storage%20of%20Chemicals%20in%20the%20Lab.pdf?csf=1&web=1&e=CtZ2Ys" target="_blank">Storage of Chemicals in the Lab</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FHydrogen%20Fluoride%20Emergency%20Protocol%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">Hydrogen Fluoride Emergency Protocol</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/sites/UHS/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety%2FGuidelines%20for%20the%20Safe%20Use%20of%20Ductless%20Hoods%2Epdf&parent=%2Fsites%2FUHS%2FShared%20Documents%2FLab%20Safety" target="_blank">Guidelines for the Safe Use of Ductless Hoods</a></li>
+        <li><a href="https://hr.mcmaster.ca/app/uploads/2024/06/SOP-Azide-Chemistry.pdf" target="_blank">Safe Handling of Azides</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/Potentially%20Explosive%20Chemicals%20in%20the%20Laboratory.pdf?csf=1&web=1&e=soZAcE" target="_blank">Potentially Explosive Chemicals in the Laboratory</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/:b:/r/sites/UHS/Shared%20Documents/Lab%20Safety/Safe%20Transport%20of%20Chemicals.pdf?csf=1&web=1&e=RIT49s" target="_blank">Transporting Chemicals for Demos, Lectures, or Similar</a></li>
+        <li><a href="https://hr.mcmaster.ca/app/uploads/2020/11/Lab-Decommission-2020.pdf" target="_blank">Lab Decommission</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/:x:/r/sites/UHS/Shared%20Documents/Lab%20Safety/Lab%20Entry%20Checklist.xlsx?d=we3cf58e17fef4388ab9d2535d4178537&csf=1&web=1&e=CqZ5y6" target="_blank">Lab Safety Checklist</a></li>
+        <li><a href="https://mcmasteru365.sharepoint.com/sites/MBSO" target="_blank">McMaster Biosafety Office</a></li>
+      </ul>
+
+      <div class="note-box">
+        <strong>Questions?</strong> For general lab safety inquiries, contact University Health and Safety at
+        <a href="mailto:uhs@mcmaster.ca">uhs@mcmaster.ca</a> or ext. <strong>24352</strong>. For questions specific to CEDT or Eng Phys facilities, contact your supervisor
+        or the CEDT / Eng Phys <a href="health-and-safety-committee.html">Health &amp; Safety Committee</a>.
+      </div>
+    </main>
+</body>
+</html>

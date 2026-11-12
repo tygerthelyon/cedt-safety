@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEDT / Engineering Physics — Laser Hazards</title>
+<meta name="description" content="Laser hazard awareness for CEDT and Engineering Physics labs, including laser safety classes and McMaster's laser safety program.">
+
+<!-- Author: Carter Yott, Summer 2026. Based on the previous CEDT Safety site (mcmaster.ca/CEDTsafety) by Graham Pearson, with support from Nebile Isik Goktas and especially, Doris Stevanovic. -->
+
+<!-- Shared stylesheet. Edit styles.css once; every page updates. -->
+<link rel="icon" href="assets/images/cedt-logo.png">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Shared scripts: page layout + current-page highlight + site-wide search. `defer` lets the HTML parse first. -->
+<script src="shared-layout.js" defer></script>
+<script src="search.js" defer></script>
+<script src="assets/search-index.js" defer></script>
+<script src="sitesearch.js" defer></script>
+
+</head>
+
+<body>
+<noscript><p>This site needs JavaScript enabled to display its navigation menu and search. <a href="index.html">Return to the home page</a> or visit <a href="https://www.mcmaster.ca/">McMaster University</a>.</p></noscript>
+<main id="main" class="pagecontent">
+
+      <h1>Hazard Awareness &ndash; Laser</h1>
+      <p><a href="hazard-awareness.html"><svg class="back-arrow" viewBox="0 0 20 12" aria-hidden="true"><path d="M18,6 L3,6 M3,6 L8,1 M3,6 L8,11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Hazard Awareness</a></p>
+
+      <div class="floatright">
+        <div class="widget">
+          <div class="widget-head">Hazard Awareness:</div>
+          <div class="widget-body">
+            <ul class="resource-links">
+              <li><a href="chemical-hazards.html">Chemical Hazards</a></li>
+              <li><a href="radiation-hazards.html">Radiation Hazards</a></li>
+              <li><a href="laser-hazards.html">Laser Hazards</a></li>
+              <li><a href="electrical-hazards.html">Electrical Hazards</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="widget">
+          <div class="widget-head">Quick Links</div>
+          <div class="widget-body">
+            <ul class="resource-links">
+              <li><a href="mandatory-training.html">Laser Safety Training</a></li>
+              <li><a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/" target="_blank">UHS Safety Programs</a></li>
+              <li><a href="lab-safety-handbook.html">Lab Safety Handbook</a></li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- end floatright -->
+
+      <div class="note-box">
+        <a href="https://hr.mcmaster.ca/app/uploads/2019/01/RMM-703-Laser-Safety-Program-October-2013.pdf" target="_blank" class="doc-ref">RMM 703</a> (Laser Safety Program) is now fully established as of the most recent University policy review.
+        McMaster has a designated Laser Safety Officer (LSO), and Laser Safety Training is offered through UHS for anyone working with Class 3B or Class 4 lasers.
+      </div>
+
+      <p>The CEDT and Engineering Physics use lasers in a range of applications, including photoluminescence, ellipsometry, grating fabrication,
+        and thin film stress analysis. McMaster's laser safety program is documented in <span class="doc-ref">RMM 703</span>; anyone working with Class 3B or Class 4 lasers
+        is required to complete Laser Safety Training. See <a href="mandatory-training.html">Mandatory Training</a> for current course details.</p>
+
+      <h2><img src="assets/images/pictograms/laser-hazard.png" class="hazard-pictogram" alt="">Potential Hazards</h2>
+      <p>The most significant laser risk comes from absorption of laser radiation in tissue. If tissue cannot dissipate the resulting heat fast enough, it can burn and suffer
+        permanent damage. The eye is especially vulnerable, since it focuses incoming light onto the retina, concentrating the energy density dramatically.
+        <strong>Retinal burns can occur essentially instantaneously.</strong></p>
+      <p>A secondary but still serious risk is photochemical damage from short-wavelength (UV/blue) radiation. Additional hazards in laser operation can include electrical
+        shock from pump/power supplies, burns, toxic fumes from ablated target material, and fire.</p>
+
+      <h2>Hazard Classification</h2>
+      <p>Lasers are classified according to the ANSI Z136.1 standard, based on their potential to cause injury, considering wavelength and power. The
+        table below summarizes the current classification system:</p>
+
+      <table class="ref-table">
+        <thead>
+          <tr><th style="width:90px;">Class</th><th>General Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Class 1</strong></td><td>Not capable of emitting hazardous radiation under normal operating conditions; exempt from controls.</td></tr>
+          <tr><td><strong>Class 2</strong></td><td>Visible lasers not capable of retinal damage under normal viewing, but could cause damage if stared at directly for an extended period.</td></tr>
+          <tr><td><strong>Class 3R</strong></td><td>Visible lasers (the modern designation that replaced "Class 3a") generally not hazardous if viewed only momentarily and without optical instruments.</td></tr>
+          <tr><td><strong>Class 3B</strong></td><td>Hazardous if viewed directly or via specular reflection. Diffuse reflections are generally not hazardous.</td></tr>
+          <tr><td><strong>Class 4</strong></td><td>Hazardous even via diffuse reflection. Can pose fire and skin burn risk in addition to eye damage.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <strong>Note:</strong> the ANSI standard formerly used a "Class 3a" designation; this was superseded by Class 3R in the ANSI Z136.1-2007 revision and later editions.
+        If you're working from older lab documentation that references "Class 3a," treat it as equivalent to Class 3R under the current standard.
+      </div>
+
+      <h2>Maximum Permissible Exposure &amp; Protective Eyewear</h2>
+      <p>Wherever possible, laser beams should be fully enclosed; this is the most effective control for Class 3B and Class 4 lasers. When direct operator interaction
+        is unavoidable (e.g., during beam alignment), appropriate laser safety eyewear becomes essential. Eyewear must be selected based on the Maximum Permissible
+        Exposure (MPE) for the specific laser's wavelength and power. Eyewear rated for one wavelength may provide no protection at another, which matters for
+        multi-wavelength sources.</p>
+      <p>Selecting appropriate eyewear requires knowing the laser's wavelength(s) and power/irradiance, and matching these against the optical density (OD) rating needed to
+        bring transmitted power below the MPE. Because this calculation is highly specific to the laser in use, consult your supervisor and the manufacturer's
+        documentation before choosing eyewear. <strong>Do not assume eyewear used for one laser is appropriate for another.</strong></p>
+
+      <h2>Non-Beam Hazards</h2>
+      <p>Non-beam-related laser hazards include:</p>
+      <ul>
+        <li>Electrical hazards from high-voltage pump or power supplies</li>
+        <li>Chemical hazards from the lasing medium itself, or from plume material ablated off a target during laser processing</li>
+      </ul>
+      <p>Lasers built or modified in-house by CEDT or Engineering Physics personnel should be labelled with their classification, consistent with manufacturer practice.</p>
+
+      <h2>Related Resources</h2>
+      <ul class="resource-list">
+        <li><a href="mandatory-training.html">Mandatory Training</a></li>
+        <li><a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/" target="_blank">UHS Our Safety</a></li>
+        <li><a href="protective-equipment.html">Protective Equipment</a></li>
+      </ul>
+
+      <p class="page-footnote">
+        <strong>Sources:</strong> McMaster University Risk Management Manual <span class="doc-ref">RMM 703</span> (Laser Safety Program), effective September 2020; ANSI Z136.1 Laser Safety Standard.
+      </p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,1179 @@
+/* ------------------------------------------------------------
+   CEDT / Engineering Physics Health & Safety Resources Site
+   Shared style sheet linked by every page.
+
+   Edit this file and all pages update. Nothing in here is page-specific.
+   Author: Carter Yott, Summer 2026
+   ------------------------------------------------------------ */
+   
+/* ------------------------------------------------------------
+   TYPE SCALE: font sizes on the site come from this ramp.
+   Keep them as whole pixel values.
+
+     12px  footer, search results, fine print
+     13px  search box, small labels
+     14px  sidebar links, ribbon submenus, widget text
+     15px  body copy, h3
+     16px  top ribbon, emphasised widget text
+     18px  h2
+     20px  department line
+     22px  h1
+     24px  site title  (18px below 480px)
+   ------------------------------------------------------------ */
+
+/* ------------ reset and base ------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  /* One number drives the left nav width AND the masthead's
+     logo column, which is what keeps the red ribbon aligned with
+     the main content column. Change it here only. */
+  --sidebar-w: 188px;
+}
+
+body {
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #333;
+  background: #f4f4f4;
+  padding: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: #990033; }
+a:hover { text-decoration: underline; }
+
+/* Little arrow after links that leave the site: everything with
+   target="_blank", so RMM PDFs, SharePoint, outside orgs. Only doing this
+   inside #main since the ribbon and footer already read as "elsewhere"
+   from context, and adding it to every one of their links would just
+   make an already busy ribbon busier. I drew the icon myself, it's not
+   a safety symbol so there's no official version to pull from.
+
+   It sits on the <a> itself as padding plus background, not a ::after.
+   A ::after is its own inline box and can wrap onto a new line by
+   itself, orphaning the arrow. Padding/background on the link attaches
+   to wherever its actual last line ends instead. */
+#main a[target="_blank"] {
+  padding-right: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3h7v7' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 3l-9 9' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 14v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right center;
+  background-size: 11px 11px;
+}
+
+/* .widget-body links are display:block, not inline, so they don't
+   fragment per line the way an inline link does. A wrapped 2-line
+   widget link ended up with the icon centered across both lines instead
+   of next to either one, which read as ambiguous ("which bullet is that
+   for?"). Sidebar Quick Links and resource lists already read as
+   external from context anyway, same as the ribbon nav above, so I just
+   drop the icon here instead of chasing a per-line fix. */
+#main .widget-body a[target="_blank"] {
+  padding-right: 0;
+  background: none;
+}
+
+/* The arrow above is just a background image, so sighted users get an
+   "this leaves the site" cue that non-visual users don't. This adds the
+   same information as off-screen text instead (same trick as
+   .visually-hidden below). Still applies inside .widget-body even though
+   the visual icon was dropped there, the announcement is worth keeping
+   either way. */
+#main a[target="_blank"]::after {
+  content: " (opens in a new tab)";
+  position: absolute;
+  left: -9999px;
+}
+
+h1 { font-size: 22px; margin-top: 0; margin-bottom: 4px; }
+h2 { font-size: 18px; color: #330000; }
+h3 { font-size: 15px; color: #330000; margin: 8px 0 4px; }
+
+/* Stop long URLs / table cells forcing horizontal scroll */
+p, li, td, th, h1, h2, h3 { overflow-wrap: break-word; }
+/* Plain element selector on purpose: any class-based rule (.form-image,
+   .logo-mcmaster) must be able to override this without a specificity
+   fight. Do not add :not() chains here. */
+img { max-width: 100%; }
+
+/* ------------ page wrapper ------------ */
+#container {
+  max-width: 1140px;            /* wide enough for the text plus both right-hand rails */
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* ------------------------------------------------------------
+   MASTHEAD
+   Two-row grid. The McMaster logo occupies a tall left column
+   the same width as the sidebar, so the red ribbon starts flush
+   with the main content column instead of spanning the page.
+   ------------------------------------------------------------ */
+#masthead {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  border-top: 8px solid #990033;
+  background: #fff;
+}
+
+/* logo cell: spans both rows, so the logo runs down to meet
+   the left nav and its right border continues that of #navmenu */
+.brand {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px 4px;
+  min-width: 0;
+  border-bottom: 3px solid #990033;   /* thin red rule sitting directly
+                                         above "CEDT/EP Safety Home" */
+}
+
+.logo-mcmaster {
+  width: 100%;          /* fills the column, so it is noticeably
+                           larger than the old height */
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;  /* aspect ratio preserved whatever the
+                           source image dimensions turn out to be */
+}
+
+/* title row */
+#header-row {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 12px 7px 14px;
+  min-width: 0;
+}
+
+#header-title {
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 0;
+}
+
+#header-title .site-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+#header-title .dept-links { font-size: 20px; }
+
+.cedt-link { flex: 0 0 auto; display: block; }
+
+.logo-cedt {
+  height: 56px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+/* ------------ site-wide search (inside the red ribbon) ------------ */
+#sitesearch {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0;
+}
+
+#siteSearchInput {
+  width: 175px;
+  box-sizing: border-box;
+  padding: 5px 7px;
+  border: 1px solid #fff;
+  background: #fff;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  min-width: 0;
+  border-radius: 0;
+}
+
+#siteSearchInput:focus { box-shadow: 0 0 0 2px rgba(255,255,255,.55); }
+
+#siteSearchResults {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+  max-height: 60vh;
+  overflow-y: auto;
+  z-index: 50;
+  text-align: left;
+}
+#siteSearchResults.open { display: block; }
+
+/* ------------ red ribbon / top nav ------------ */
+#topnav {
+  grid-column: 2;
+  grid-row: 2;
+  background: #990033;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  /* 8px here + 6px inside each link = 14px from the ribbon's left edge to
+     the "McMaster Home" label. 14px on the right puts the arrows the same
+     distance from the right edge. */
+  padding: 0 14px 0 8px;
+  min-width: 0;
+}
+
+#topnav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* Spacing between the nav items. This is the ONE knob: raise the 30px
+     to spread them out, lower it to make them closer. flex-start (rather than
+     space-between) is what stops them being pushed apart to fill the bar.
+     The 14px insets at each end are unaffected either way. */
+  gap: 2px 30px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+/* flex: 1 1 auto on the <ul> lets it grow into the leftover space next
+   to the search box, instead of both sitting at content width with a gap
+   in between. justify-content: flex-start then keeps the items
+   themselves left-aligned in that space rather than spread apart. */
+#topnav > ul > li { position: relative; }
+
+#topnav > ul > li > a {
+  display: block;
+  color: #fff;
+  text-decoration: underline;   /* signals clickable without a boxed-button look */
+  text-decoration-color: rgba(255, 255, 255, .55);
+  text-underline-offset: 3px;
+  padding: 4px 6px;         /* vertical trimmed again for a shorter bar */
+  font-size: 16px;
+  line-height: 1.2;         /* the real source of the dead red space: the
+                               body's 1.7 line-height was adding ~9px of
+                               empty box around every 13px label */
+  font-weight: bold;
+  text-align: center;       /* label centred in its stretched cell */
+  white-space: nowrap;
+}
+
+#topnav > ul > li:hover > a,
+#topnav > ul > li:focus-within > a { background: #6b0024; }
+
+#topnav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  max-width: 90vw;
+  z-index: 100;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* last menus open leftward so they stay on screen */
+#topnav > ul > li:nth-last-child(-n+2) ul { left: auto; right: 0; }
+
+#topnav ul ul li a {
+  display: block;
+  padding: 6px 12px;
+  color: #990033;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: normal;
+}
+
+#topnav ul ul li a:hover { background: #f9e6eb; }
+#topnav li:hover > ul,
+#topnav li:focus-within > ul { display: flex; }
+
+/* ------------ layout: sidebar + content ------------ */
+#body-wrap {
+  display: flex;
+  gap: 0;   /* no align-items: flex-start; children stretch to match the taller
+               column, so #navmenu's grey background runs the full page height
+               instead of stopping short and leaving bare white space below it
+               on long pages */
+}
+
+/* left sidebar nav */
+#navmenu {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  border-right: 1px solid #ddd;
+  background: #f9f9f9;
+  padding: 11px 0;
+  min-height: 600px;
+}
+
+.ssr-item {
+  display: block;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: inherit;
+}
+.ssr-item:last-child { border-bottom: none; }
+.ssr-item:hover, .ssr-item.active { background: #fbe6ea; }
+.ssr-title { display: block; font-weight: bold; color: #990033; font-size: 13px; }
+.ssr-heading { display: block; font-size: 12px; color: #555; margin-top: 1px; }
+.ssr-snippet { display: block; font-size: 12px; color: #444; margin-top: 3px; line-height: 1.5; }
+.ssr-snippet mark { background: #fbe6ea; color: #990033; padding: 0 1px; }
+.ssr-empty { padding: 10px; font-size: 13px; color: #666; }
+
+.indexlink {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;      /* sidebar links all share one size; the bold
+                           weight and indent carry the hierarchy instead */
+}
+
+.indexlink a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  transition: background-color .12s ease;
+}
+
+.indexlink a:hover { background: #f6e2e6; }
+
+.indexsublink {
+  padding: 3px 10px 3px 18px;
+  font-size: 14px;
+  color: #000;
+}
+
+.indexsublink a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  transition: background-color .12s ease;
+}
+.indexsublink a:hover { background: #f6e2e6; }
+
+.indexsubsublink {
+  padding: 2px 10px 2px 26px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.indexsubsublink a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  transition: background-color .12s ease;
+}
+
+.indexsubsublink a:hover { background: #f6e2e6; }
+
+/* marks the page you are currently on. padding-left keeps the text from
+   sitting flush against the border, which read as the title being cut off. */
+#navmenu a.current {
+  font-weight: bold;
+  background: #fbe6ea;
+  border-left: 3px solid #990033;
+  padding-left: 5px;
+}
+
+/* ------------ main content ------------ */
+.pagecontent {
+  flex: 1;
+  padding: 18px 18px 5px 18px;
+  min-width: 0;
+}
+
+.pagecontent ul, .pagecontent h1, .pagecontent h2, .pagecontent h3 {
+  text-align: left;
+}
+
+/* Section break: without this, a page with several h2s in a row (the
+   hazard pages especially) reads as one unbroken block of text.
+   display: inline-block keeps the rule text-width instead of stretching
+   to the full column (which looked uneven against the column's asymmetric
+   padding, and could run underneath a floated .floatright widget). */
+.pagecontent h2 {
+  display: inline-block;
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #e8c9cf;
+}
+
+/* An h2 acting as a subtitle directly under the h1 (nothing in between)
+   shouldn't get the normal 30px section-break gap; needs the extra
+   h1+element specificity to actually beat .pagecontent h2 above. */
+.pagecontent h1 + h2 {
+  margin-top: 8px;
+}
+
+/* Subheadings get a lighter underline (text-width, not full-width like h2's
+   rule) so the hierarchy stays readable: h2 = section break, h3 = subhead. */
+.pagecontent h3 {
+  text-decoration: underline;
+  text-decoration-color: #e8c9cf;
+  text-underline-offset: 3px;
+}
+
+/* Standardized hazard-class pictogram, set beside a heading */
+.hazard-pictogram {
+  width: 44px;
+  height: 44px;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: -6px;
+}
+
+/* Smaller variant for h3-level subsections (eg. protective-equipment.html),
+   where a full-size .hazard-pictogram would dwarf the 14px heading text */
+.hazard-pictogram-sm {
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-top: -3px;
+}
+
+/* Reference grid of pictograms with labels underneath, eg. chemical-hazards.html's GHS key */
+.pictogram-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 14px 0 22px;
+}
+.pictogram-key-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 96px;
+  text-align: center;
+  font-size: 13px;
+}
+.pictogram-key-item img {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 5px;
+}
+
+/* ------------ right-side widgets ------------ */
+.floatright {
+  float: right;
+  margin: 0 0 10px 28px;
+  width: 215px;
+}
+
+.widget {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 12px;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+  overflow: hidden;   /* clips widget-head's flat top corners to the radius */
+}
+
+.widget-head {
+  background: #990033;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+/* Emergency-numbers widget, used on dial-911.html and lab-safety-handbook.html.
+   Was defined only in lab-safety-handbook.html's local <style> block, so
+   dial-911.html's copy rendered as plain unstyled stacked divs. */
+.widget.emergency { border-color: #990033; }
+.widget.emergency .widget-head { background: #990033; }
+.widget-body .emergency-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-bottom: 1px dotted #ddd;
+}
+.widget-body .emergency-row:last-child { border-bottom: none; }
+.widget-body .emergency-row .num {
+  font-weight: bold;
+  color: #990033;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+.widget-body {
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.widget-body ul { margin: 4px 0 4px 16px; padding: 0; }
+
+.resource-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.resource-links li { position: relative; padding-left: 13px; margin-bottom: 4px; }
+.resource-links li::before {
+  content: "\2022";
+  color: #990033;
+  position: absolute;
+  left: 0;
+}
+/* .widget-body ul (0,1,1) otherwise beats .resource-links' own margin (0,1,0)
+   and stacks its 16px indent on top of resource-links' own 13px bullet
+   padding, so a resource-links list inside a widget reads much more indented
+   than a plain widget list right above it. Zero it out here instead. */
+.widget-body .resource-links { margin-left: 0; }
+
+/* Flat lists (SDS/SOP link lists) read as one long, sparse column, so
+   let them wrap into two instead, the box looks less empty that way. */
+.two-col-list {
+  columns: 2;
+  column-gap: 28px;
+}
+.two-col-list li { break-inside: avoid; }
+
+.widget-body a {
+  color: #990033;
+  display: block;
+  margin-bottom: 3px;
+  text-decoration: none;
+}
+
+.widget-body a:hover { text-decoration: underline; }
+
+/* For "click here" / "read more" style links, where the text describes
+   an action rather than a destination. Underlined by default, unlike
+   plain .widget-body links, since colour alone doesn't read as clickable
+   for this kind of phrasing. */
+.cta-link { text-decoration: underline; }
+
+/* Thin inline-SVG back arrow (eg. the hazard sub-pages' "Back to Hazard
+   Awareness" link). stroke="currentColor" so it always matches the link's
+   own colour instead of depending on how a Unicode arrow glyph happens
+   to render in the page's font. */
+.back-arrow {
+  width: 16px;
+  height: 10px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Makes the "Download X" / "View X" links in a right-hand widget read as
+   a clear call-to-action button instead of plain red text. */
+#main .widget-body a.download-btn {
+  display: inline-block;
+  background: #990033;
+  color: #fff;
+  font-size: 16px;      /* matches .widget-emphasis, the wrapper single-button
+                            pages normally use - download-btn-group skips that
+                            wrapper, so this needs to be set here directly or
+                            its buttons fall back to .widget-body's 14px. */
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
+#main .widget-body a.download-btn:hover { background: #7a0029; text-decoration: none; }
+
+/* Within a download-btn, de-emphasizes generic scaffolding words ("Download",
+   "View", "Template (.xlsx)") back to normal weight so the bold left over
+   from .download-btn above reads as just the actual document/form name -
+   the part someone's actually scanning the button for. */
+.download-btn .btn-meta { font-weight: normal; }
+
+/* download-btn buttons that hand off to somewhere off-site entirely (eg.
+   lab-assessment.html's SharePoint / external doc templates), rather than a
+   same-site PDF - gets the same opens-in-a-new-tab arrow as inline links,
+   redrawn in white since it sits on the button's maroon fill instead of the
+   page background. */
+#main .widget-body a.download-btn.leaves-site {
+  padding-right: 30px;
+  background: #990033 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3h7v7' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 3l-9 9' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 14v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  background-size: 11px 11px;
+}
+#main .widget-body a.download-btn.leaves-site:hover {
+  background-color: #7a0029;
+}
+
+/* Stacks multiple download-btn buttons in one widget (eg. lab-assessment.html's
+   two template formats) with even spacing instead of relying on incidental wrap. */
+.download-btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+/* Buttons in a group vary in label length ("Eng Phys Template (.docx)" vs.
+   "General / CEDT Template (.xlsx)"), which at their natural inline-block
+   width made one button wrap to 2 lines and the other sit on 1 - same font,
+   visibly different box sizes. Stretching to the group's full width (set
+   above) and centering each button's own content here instead makes every
+   button in a group match, regardless of label length. */
+#main .widget-body .download-btn-group a.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 52px;
+}
+
+/* ------------ bulletin boxes ------------ */
+.bulletin-col {
+  float: right;
+  margin: 0 0 10px 18px;
+  width: 215px;
+}
+
+.bulletin {
+  border: 2px solid #999;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 6px 8px;
+  font-size: 13px;
+  text-align: center;   /* centers the h2 below it. .pagecontent h2 is
+                           display:inline-block, so text-align:center on
+                           the heading itself only centers text within
+                           its own shrink-wrapped box, not the box's
+                           position. Has to happen up here, on the
+                           containing block, instead. */
+}
+
+/* .pagecontent h2 forces text-align:left (needed for section-break h2s in
+   the main column), which beats .bulletin's own text-align:center by source
+   order. That only centers the h2's inline-block BOX, not the text inside
+   it, so a 2-line title (eg. "Departmental Safety<br>Bulletin Boards") had
+   its wider line filling - and so looking centered - while the shorter line
+   sat flush left inside that same box. Re-asserting center here fixes the
+   text itself, on top of the box-centering .bulletin already does. */
+.bulletin h2 { margin-top: 4px; margin-bottom: 4px; text-align: center; }
+.bulletin p, .bulletin ul, .bulletin table { text-align: left; }
+.bulletin p, .bulletin ul { line-height: 1.7; }
+.bulletin ul { margin: 4px 0 4px 6px; padding: 0 0 0 10px; }
+
+/* ------------ shared content classes ------------
+   These replace the per-page inline style="font-size:..." attributes.
+   Keeping them here means every page inherits one consistent type scale.
+   ------------------------------------------------------------ */
+.center { text-align: center; }
+.nowrap { white-space: nowrap; overflow-wrap: normal; word-break: keep-all; }   /* keeps a short parenthetical like "(from UHS)" from splitting across lines in a narrow column */
+.underline-list a { text-decoration: underline; }
+
+/* Same download cue as .applinks, for widget lists that are entirely PDF
+   downloads (eg. inspections.html's inspection forms) - needs to out-rank
+   #main .widget-body a[target="_blank"]'s background reset above. */
+#main .widget-body .underline-list a[target="_blank"] {
+  padding-right: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3h7v7' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 3l-9 9' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 14v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right center;
+  background-size: 11px 11px;
+}
+
+.reg-quote {                       /* a quoted line from an RMM/policy document */
+  margin: 10px 0;
+  padding: 6px 14px;
+  border-left: 3px solid #ccc;
+  font-style: italic;
+}
+
+.doc-ref { font-style: italic; }   /* RMM numbers, document titles */
+
+.course-name { font-weight: bold; }   /* inline course-name references outside a table,
+                                          matching the bold course names used in the
+                                          training matrix's own table cells */
+
+.visually-hidden {            /* label read by screen readers only */
+  position: absolute;
+  left: -9999px;
+}
+
+.widget-emphasis {            /* e.g. the emergency phone numbers */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.widget-fineprint {           /* explanatory note under a widget */
+  font-size: 13px;
+}
+
+.applinks {                   /* row of store links inside a widget */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* Restores the standard "opens in a new tab" external-link arrow (see
+   #main a[target="_blank"] above) for the iPhone/Android app-store links
+   specifically - .widget-body a[target="_blank"] strips that icon inside
+   widgets generally, but these two read as leaving the site and benefit
+   from the cue. Needs to out-rank that reset rule's own specificity
+   (#main .widget-body a[target="_blank"]), so this repeats the same
+   #main/.widget-body prefix rather than relying on .applinks alone. */
+#main .widget-body .applinks a.app-download[target="_blank"] {
+  padding-right: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3h7v7' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 3l-9 9' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 14v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6' fill='none' stroke='%23990033' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right center;
+  background-size: 11px 11px;
+}
+
+.list-warning { color: #990033; }   /* red-text warning bullet list */
+
+/* "Related Resources" table used on several hazard pages. Was defined only
+   in the local <style> block of 3 of the 5 pages that use it (laser-hazards,
+   radiation-hazards, lab-safety-handbook, under two different class names);
+   the others rendered it as a bare unstyled table. */
+/* Data-reference table (eg. laser-hazards.html's hazard-class table) -
+   bordered and striped to match the look of the training-matrix and
+   facility-tables data tables elsewhere on the site. */
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 10px 0 20px;
+  border: 1px solid #ddd;
+}
+.ref-table th {
+  background: #990033;
+  color: #fff;
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+.ref-table th:first-child { width: 280px; }
+.ref-table td {
+  padding: 7px 10px;
+  border: 1px solid #eee;
+  vertical-align: top;
+}
+.ref-table tbody tr:nth-child(even) td { background: #fff8f8; }
+
+/* Condensed "Related Resources" box - link only, no description column.
+   Same spirit as the training pages' course lists: name first, detail
+   left to the linked document itself. Boxed like the site's other
+   reference callouts (.note-box, .widget) instead of sitting bare in
+   the body text. */
+.resource-list {
+  list-style: disc;
+  margin: 10px 0 20px;
+  padding: 14px 16px 14px 32px;
+  font-size: 15px;
+  background: #fff8f8;
+  border: 1px solid #e0c2c9;
+  border-radius: 4px;
+  max-width: 550px;
+}
+.resource-list li { margin-bottom: 6px; }
+
+.page-footnote {              /* small sourcing note at the bottom of a hazard page */
+  font-size: 13px;
+  color: #666;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.doc-section {                 /* indented block of h3-labelled documentation lists */
+  margin-right: 75px;
+}
+.section-heading { padding: 5px 0 0 10px; }   /* h3 introducing a documentation/training list */
+
+/* Warning callouts. Same story as .ref-table above: only defined locally on
+   laser-hazards/radiation-hazards, so chemical-hazards, electrical-hazards,
+   employer-responsibilities and dial-911 rendered these with no styling
+   at all, just plain text at a constrained width. */
+.note-box {
+  background: #fff5f5;
+  border-left: 3px solid #c53360;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
+  padding: 8px 12px;
+  margin: 10px 0;
+  max-width: 550px;
+  font-size: 15px;
+}
+.note-box strong { color: #990033; }
+
+.danger-box {
+  background: #fff5f5;
+  border: 1px solid #f0c2ce;
+  border-left: 4px solid #990033;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(153, 0, 51, .12);
+  padding: 10px 14px;
+  margin: 14px 0;
+  max-width: 550px;
+  font-size: 15px;
+}
+.danger-box .danger-head {
+  font-weight: bold;
+  color: #990033;
+  font-size: 15px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  padding-left: 26px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 L22 20 L2 20 Z' fill='none' stroke='%23990033' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cline x1='12' y1='10' x2='12' y2='15' stroke='%23990033' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='17.3' r='1' fill='%23990033'/%3E%3C/svg%3E") no-repeat left center;
+  background-size: 18px 18px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+a.link-label { text-decoration: underline; display: inline; }   /* source link inside a bold lead-in, e.g. "(from UHS)". Needs the element+class specificity to beat ".widget-body a { display: block }" above, and needs plain inline (not inline-block) so it can't force its own line inside a nowrap parent. */
+
+.board-table {                /* safety board location table */
+  width: 100%;
+  font-size: 13px;
+  border-collapse: collapse;
+  line-height: 1.8;
+}
+.board-table td, .board-table th { padding: 1px 0; }
+.board-table th { font-weight: normal; text-align: left; }   /* row label, not a bold/centered header */
+.board-table th + td { text-align: center; }
+
+/* ------------ form / document images ------------
+   Scanned forms come in different sizes and different aspect ratios, so
+   matching just the width still left them all different heights. I gave
+   every image the same fixed box instead and let object-fit: contain
+   fit it inside without stretching or cropping anything. Not wrapped in a
+   link to a full-size scan - the box is already large enough to read, and
+   the full-size originals aren't reliably right-side-up when opened
+   directly (unlike the thumbnails, which were rotated by hand). */
+.form-image {
+  display: block;
+  width: 100%;
+  max-width: 420px;        /* box WIDTH  (both knobs resize the images) */
+  height: 460px;           /* box HEIGHT, portrait-leaning since scanned
+                              forms are usually taller than they are wide */
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  border: 1px solid var(--rule, #d8d8d8);
+  padding: 5px;
+  margin: 16px auto;       /* auto left+right = centred on the page */
+}
+
+@media (max-width: 720px) {
+  .form-image { height: 380px; }
+}
+
+/* ------------ responsibilities / training tables ------------
+   These rules were duplicated VERBATIM in a <style> block on
+   mandatory-training, supervisor-responsibilities and
+   worker-responsibilities. Shared here so one edit covers all. */
+.widget-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  font-size: 13px;        /* header row is bolded in the HTML, not here */
+}
+
+.widget-table td, .widget-table th {
+  background-color: #fff1f1;
+  padding: 5px 8px;
+  vertical-align: middle;
+  border: none;
+  font-weight: normal;  /* browser default bolds <th>; the header row below
+                           sets its own bold explicitly */
+  text-align: left;     /* browser default centers <th> */
+}
+
+/* Course name column bold, matching the bold course names in the
+   Corporate Training Matrix, instead of the italic these used before. */
+.widget-table tr:not(:first-child) td:first-child { font-weight: bold; }
+
+/* Header row (Course Name / Course Code) was the same pink as every data
+   row below it, so the column titles didn't read as titles. Real <th>
+   elements now carry that semantic meaning too, not just bold <td> text. */
+.widget-table tr:first-child td, .widget-table tr:first-child th {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #990033;
+  color: #fff;
+}
+
+.widget-table a:hover { text-decoration: none; }
+
+.wrap-container { width: 100%; }
+
+.right-table-box {
+  float: right;
+  width: 320px;
+  max-width: 100%;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.middle-table-box {
+  width: 320px;
+  max-width: 100%;
+  margin: 10px 0 20px 0;
+}
+
+.text-box {
+  padding: 12px 15px;
+  background-color: #fff5f5;
+  border-left: 3px solid #c53360;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
+  margin: 10px 0;
+}
+
+@media (max-width: 720px) {
+  .right-table-box { float: none; width: 100%; margin-left: 0; }
+  .middle-table-box { width: 100%; }
+}
+
+/* ------------ SOP template form ------------
+   The blank SOP form on SOP.html was built with 55 inline style
+   attributes across 9 tables, with header cells inconsistently
+   white or grey. Normalised here. */
+.sop-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.sop-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+}
+
+.sop-table th,
+.sop-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.sop-table th {
+  width: 30%;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+}
+
+.sop-table td { background-color: #fff; }
+
+.sop-label { font-weight: bold; margin-bottom: 4px; }
+.sop-checklist { line-height: 2; }
+.sop-fill { height: 60px; border-bottom: 1px solid #999; }
+
+/* ------------ footer ------------ */
+#footer {
+  border-top: 2px solid #990033;
+  background: #faf7f7;
+  font-size: 13px;
+  line-height: 2;
+  color: #666;
+  text-align: center;
+  padding: 12px 10px;
+  margin-top: 20px;
+  letter-spacing: .01em;
+}
+
+#footer a { color: #990033; }
+#footer a:hover { text-decoration: underline; }
+
+/* ------------ keyboard accessibility ------------ */
+
+/* Off-screen until focused. Without it, a keyboard or screen-reader user
+   tabs through 59 masthead/nav/sidebar links before reaching the content
+   on EVERY page. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+  z-index: 200;
+  background: #fff;
+  color: #990033;
+  font-weight: bold;
+  padding: 8px 14px;
+  border: 3px solid #990033;
+  text-decoration: none;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid #0b63ce;
+  outline-offset: 1px;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE: this is what stops the layout warping.
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   ORG CHART, diagram used on health-and-safety-committee.html and
+   mcmaster-workplace-and-environmental-HASP.html. Used to be a
+   hand-positioned stack of divs with hardcoded pixel margins for the
+   connector lines, and it broke at any zoom level or viewport where a
+   box's text happened to wrap differently. Rebuilt it as one inline SVG
+   per page (viewBox-scaled so it resizes cleanly), styling shared here.
+   ------------------------------------------------------------ */
+.org-chart {
+  display: block;
+  width: 100%;
+  max-width: 660px;
+  height: auto;
+  margin: 16px auto;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+.oc-caption { font-size: 11px; font-style: italic; fill: #666; }
+.oc-org { fill: #fafafa; stroke: #bbb; stroke-width: 1.5; }
+.oc-org-label { text-anchor: middle; font-weight: 600; font-size: 12.5px; fill: #333; }
+.oc-sub { fill: #fff; stroke: #bbb; stroke-width: 1.5; }
+.oc-sub-label { text-anchor: middle; font-size: 11px; fill: #333; }
+
+/* External/reference boxes (linked-out RMM, TOR, OHSA, etc.) and the
+   connector lines between all boxes, kept separate from .oc-org/.oc-sub
+   above since those are solid-fill internal nodes and these are white
+   boxes with a red outline. Centralizing the red here instead of
+   repeating "#990033" across six boxes means a rebrand only touches
+   this file. */
+.oc-ref { stroke: #990033; stroke-width: 1.5; }
+.oc-ref-label { text-anchor: middle; font-weight: bold; fill: #990033; }
+.oc-ref-label-muted { text-anchor: middle; font-weight: bold; fill: #5a2233; }
+.oc-arrowhead { fill: #990033; }
+.oc-connectors { fill: none; stroke: #990033; stroke-width: 1.75; }
+
+/* Ribbon: keep the nav on a single line as long as possible by giving
+   the search box less room before anything is allowed to wrap. */
+@media (max-width: 1080px) and (min-width: 721px) {
+  #siteSearchInput { width: 120px; }
+  #topnav > ul > li > a { font-size: 15px; }
+  #topnav > ul > li > a { padding: 4px 5px; }
+  #topnav > ul { gap: 2px 14px; }   /* tighter gap keeps one line here */
+  #topnav { gap: 10px; padding: 0 11px 0 6px; }
+}
+
+/* One right-hand rail instead of two */
+@media (max-width: 1080px) {
+  .bulletin-col {
+    float: none;
+    width: auto;
+    margin: 0 0 14px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .bulletin { width: calc(50% - 6px); margin-bottom: 0; }
+}
+
+/* Widgets stop floating; sidebar still beside content */
+@media (max-width: 860px) {
+  .floatright {
+    float: none;
+    width: auto;
+    margin: 0 0 14px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .widget { width: calc(50% - 6px); margin-bottom: 0; }
+}
+
+/* Stack the whole page */
+@media (max-width: 720px) {
+  body { padding: 8px; }
+  :root { --sidebar-w: 150px; }  /* sidebar stays on the left, just narrower */
+  .pagecontent { padding: 14px 10px; }
+  #navmenu { min-height: 0; }
+  .widget, .bulletin { width: 100%; }
+  /* masthead collapses: logo no longer holds a column, ribbon
+     goes full width so the nav still reads as a single bar */
+  #masthead { grid-template-columns: minmax(0, 1fr); }
+  .brand {
+    grid-column: 1;
+    grid-row: 1;
+    border-right: none;
+    justify-content: flex-start;
+    padding: 8px 10px 0;
+  }
+  .logo-mcmaster { width: auto; height: 62px; }
+  #header-row { grid-column: 1; grid-row: 2; padding: 6px 10px 8px; }
+  #topnav {
+    grid-column: 1;
+    grid-row: 3;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  #topnav > ul { flex: 1 1 100%; }
+  #sitesearch { flex: 1 1 100%; padding: 0 0 6px; }
+  #siteSearchInput { flex: 1 1 auto; width: auto; }
+  /* Touch devices have no :hover, so on narrow screens the submenus are
+     opened by tapping their parent (see shared-layout.js, which adds
+     .open). Closed by default so the ribbon stays a compact bar of five
+     labels instead of a wall of ~30 links. */
+  #topnav > ul { gap: 2px 6px; }
+  #topnav ul ul,
+  #topnav li:hover > ul,
+  #topnav li:focus-within > ul { display: none; }
+  #topnav > ul > li.open > ul {
+    display: flex;
+    position: static;
+    max-width: none;
+    background: transparent;
+    border: none;
+    min-width: 0;
+    width: 100%;
+  }
+  #topnav > ul > li { flex: 0 0 auto; }
+  #topnav > ul > li.open { flex: 1 1 100%; }
+  #topnav > ul > li.open > a { background: #6b0024; }
+  #topnav ul ul li a {
+    color: #fff;
+    padding: 5px 6px 5px 22px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  #topnav ul ul li a:hover { background: #6b0024; }
+}
+
+/* Phones: only now does the sidebar drop below the content */
+@media (max-width: 560px) {
+  #body-wrap { flex-direction: column; }
+  #navmenu {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    order: 2;
+  }
+  .pagecontent { order: 1; }
+}
+
+@media (max-width: 480px) {
+  .logo-mcmaster { height: 50px; }
+  .logo-cedt { height: 40px; }
+  #header-title .site-title { font-size: 18px; }
+  #header-row { gap: 10px; }
+}
+
+@media print {
+  #topnav, #sitesearch, #navmenu { display: none; }
+  #masthead { grid-template-columns: auto 1fr; }
+  #container { max-width: none; }
+}

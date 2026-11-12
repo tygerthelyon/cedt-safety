@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEDT / Engineering Physics — Mandatory Training</title>
+<meta name="description" content="Mandatory safety training courses required to work in CEDT or Engineering Physics facilities, from both the department and UHS.">
+
+<!-- Author: Carter Yott, Summer 2026. Based on the previous CEDT Safety site (mcmaster.ca/CEDTsafety) by Graham Pearson, with support from Nebile Isik Goktas and especially, Doris Stevanovic. -->
+
+<!-- Shared stylesheet. Edit styles.css once; every page updates. -->
+<link rel="icon" href="assets/images/cedt-logo.png">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Shared scripts: page layout + current-page highlight + site-wide search. `defer` lets the HTML parse first. -->
+<script src="shared-layout.js" defer></script>
+<script src="search.js" defer></script>
+<script src="assets/search-index.js" defer></script>
+<script src="sitesearch.js" defer></script>
+
+</head>
+
+<body>
+<noscript><p>This site needs JavaScript enabled to display its navigation menu and search. <a href="index.html">Return to the home page</a> or visit <a href="https://www.mcmaster.ca/">McMaster University</a>.</p></noscript>
+<main id="main" class="pagecontent">
+
+       <h1>Mandatory CEDT and Engineering Physics Safety Training</h1>
+        <h2>Updated Training Requirements &mdash; 2026</h2>
+
+       <div class="floatright">
+        <div class="widget">
+          <div class="widget-head">As an employee, you have&hellip;</div>
+          <div class="widget-body">
+            <ul>
+              <li>the right to know</li>
+              <li>the right to participate</li>
+              <li>the right to refuse work</li>
+            </ul>
+            <a href="employee-rights.html" class="cta-link">Click to learn more.</a>
+          </div>
+        </div>
+    </div> <!-- end floatright -->
+
+    <p>To work in CEDT or Engineering Physics facilities, a number of courses are mandatory. Some of these courses are mandated by the CEDT and Eng Phys directly,
+      while certain courses are mandated by the University's UHS office or other oversight bodies, like <a href="https://healthphysics.mcmaster.ca/" target="_blank">Health Physics.</a></p>
+    <p>The CEDT and Eng Phys typically require courses that pertain directly to the specific hazards encountered in our facilities.</p>
+    <p>UHS courses serve two purposes. Some courses UHS provides, like WHMIS, are regulated by the government. Other courses (like Ergonomics or Slips, Trips, and Falls) have been developed because statistical trends have identified that these issues cause significant numbers of injuries on campus.</p>
+    <p>The following table is derived from McMaster's "<a href="https://mcmasteru365.sharepoint.com/:x:/r/sites/UHS/_layouts/15/Doc.aspx?sourcedoc=%7BFA3FBBC6-2457-440B-8A8B-0ACD7F099C50%7D&file=Training%20Matrices.xlsx&action=default&mobileredirect=true" target="_blank">Corporate Training Matrix</a>".
+      The CEDT and Eng Phys have also identified additional courses specifically relevant to our facilities.</p>
+    <p>Please note that some people fall into more than one category. For example:</p>
+      <ul>
+        <li><strong>Teaching Assistant Role:</strong> Academic &amp; Admin, Laboratory</li>
+        <li><strong>Faculty Role:</strong> Faculty (with Lab Research), Faculty (without Lab Research), Supervisor</li>
+      </ul>
+      <p>In these cases, you are required to complete all necessary training for all roles.</p>
+    <hr>
+    <h2>Corporate Training Matrix</h2>
+    <p>(As of July 2026. Legend included at bottom.)</p>
+
+<!--training matrix -->
+<div class="training-matrix">
+<style>
+.training-matrix {
+  --tm-header-bg: #990033;
+  --tm-header-text: #ffffff;
+  --tm-row-stripe: #ffffff;
+  --tm-row-base: #ffffff;
+  --tm-border-color: #eee;
+  --tm-outer-border: #ddd;
+  --tm-link-color: #990033;
+  --tm-mark-color: #990033;
+  --tm-legend-bg: #ffffff;
+  --tm-legend-text: #990033;
+  --tm-legend-border: #ddd;
+  --tm-cell-padding: 3px 6px;
+  --tm-font: Calibri, Arial, Helvetica, sans-serif;
+
+  font-family: var(--tm-font);
+  font-size: 12px;
+  color: #000000;
+}
+
+.training-matrix .tm-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--tm-outer-border);
+}
+
+.training-matrix table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 900px;
+  background: var(--tm-row-base);
+}
+
+.training-matrix th,
+.training-matrix td {
+  border: 1px solid var(--tm-border-color);
+  padding: 7px 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.training-matrix thead th {
+  background: var(--tm-header-bg);
+  color: var(--tm-header-text);
+  max-width: 130px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.35;
+  padding: 9px 8px;
+}
+
+.training-matrix tbody th {
+  background: var(--tm-row-base);
+  color: #000000;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Category column (Reading Material / Non-UHS Training) in the Additional
+   Courses table, unlike the main matrix's left-aligned course-name column,
+   reads better centred since each label spans several rows. */
+.additional-courses-table tbody th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Widen the leftmost "Course" column a bit */
+.training-matrix th:first-child,
+.training-matrix td:first-child {
+  width: 230px;
+}
+
+.training-matrix tbody tr:nth-child(even) td:not(.tm-note) {
+  background: var(--tm-row-stripe);
+}
+.training-matrix tbody tr:nth-child(even) th {
+  background: var(--tm-row-stripe);
+}
+
+.training-matrix td.tm-note {
+  text-align: left;
+  font-style: italic;
+  color: #000000;
+  background: var(--tm-row-stripe);
+}
+
+.training-matrix td a {
+  color: var(--tm-link-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+.training-matrix td a:hover {
+  text-decoration: underline;
+}
+
+.training-matrix .tm-x {
+  color: var(--tm-mark-color);
+  font-size: 14px;
+}
+.training-matrix .tm-diamond {
+  color: var(--tm-mark-color);
+  font-size: 14px;
+}
+
+.training-matrix .tm-legend {
+  margin-top: 18px;
+  background: var(--tm-legend-bg);
+  color: var(--tm-legend-text);
+  border: 1px solid var(--tm-legend-border);
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.training-matrix .tm-legend strong {
+  font-size: 14px;
+  color:#000000;
+}
+.training-matrix .tm-legend ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.training-matrix .tm-legend p {
+  margin: 10px 0 0;
+}
+</style>
+
+<div class="tm-table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2" class="tm-note">Course</th>
+      <th rowspan="2" class="tm-note">Mosaic Code</th>
+      <th rowspan="2" class="tm-note">Frequency</th>
+      <th colspan="8" class="tm-note">Roles</th>
+    </tr>
+    <tr>
+      <th>Academic &amp; Admin (inc. Grad Students)</th>
+      <th>Faculty (with Lab Research)</th>
+      <th>Faculty (without Lab Research)</th>
+      <th>Laboratory (all occupants)</th>
+      <th>Library</th>
+      <th>Supervisors</th>
+      <th>Campus Stores (ABB/HthSci)</th>
+      <th>Managers</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th>Accident Investigation (Supervisor/JHSC)</th>
+      <td>ACCINV</td><td>3 yr</td>
+      <td></td><td></td><td></td><td></td><td></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Autoclave Awareness</th>
+      <td>AUTOCL</td><td>Once</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Basic Electricity</th>
+      <td>BELEC</td><td>Once</td>
+      <td></td><td></td><td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td><td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Biohazard Awareness</th>
+      <td>BSAWAR</td><td>Once</td>
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Biosafety Training</th>
+      <td>BSLTRA</td><td>Once</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Biosafety Update</th>
+      <td>BSUPD</td><td>Annually</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Chemical Handling &amp; Spills</th>
+      <td>CHEMHS</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <th>Confined Space Awareness</th>
+      <td>CONSPA</td><td>Annually</td>
+      <td colspan="8" class="tm-note">Selected Staff Before Use</td>
+    </tr>
+
+    <tr>
+      <th>Controlled Goods</th>
+      <td>CNTRLG</td><td>Once</td>
+      <td colspan="8" class="tm-note">Selected Staff Before Use</td>
+    </tr>
+
+    <tr>
+      <th>Defensive Driving (required if using McMaster Vehicle)</th>
+      <td>DDRIVE</td><td>3 yr</td>
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      <td><span class="tm-diamond">X</span></td>
+    </tr>
+
+    <tr>
+      <th>Due Diligence</th>
+      <td>DUEDIL</td><td>3 yr</td>
+      <td colspan="8" class="tm-note">Supervisors</td>
+    </tr>
+
+    <tr>
+      <th>Hospital Fire Safety</th>
+      <td>FHSFSF</td><td>Annually</td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+    </tr>
+
+    <tr>
+      <th>Fire Warden</th>
+      <td>FIRWRD</td><td>Once</td>
+      <td colspan="8" class="tm-note">Fire Wardens as Appointed</td>
+    </tr>
+
+    <tr>
+      <th>First Aid (Standard)</th>
+      <td><i>In-Person</i></td><td>3 yr</td>
+      <td colspan="8" class="tm-note">Selected Staff from all areas</td>
+    </tr>
+
+    <tr>
+      <th>Forklift</th>
+      <td><i>In-Person</i></td><td>3 yr</td>
+      <td colspan="8" class="tm-note">Selected Staff Before Use</td>
+    </tr>
+
+    <tr>
+      <th>Gas Cylinder</th>
+      <td>GASCYL</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Golf Cart Safety</th>
+      <td>GLFCRT</td><td>5 yr</td>
+      <td colspan="8" class="tm-note">Selected Staff Before Use</td>
+    </tr>
+
+    <tr>
+      <th>Health &amp; Safety Orientation</th>
+      <td>HSORI</td><td>Once</td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+    </tr>
+
+    <tr>
+      <th>Heat Stress Prevention</th>
+      <td>HTSTRS</td><td>3 yr</td>
+      <td colspan="8" class="tm-note">Open to All Staff</td>
+    </tr>
+
+    <tr>
+      <th>Hydrogen Fluoride</th>
+      <td>HFLTR</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Indoor Air Quality</th>
+      <td>INDARQ</td><td>Once</td>
+      <td colspan="8" class="tm-note">Open to All Staff</td>
+    </tr>
+
+    <tr>
+      <th>JHSC Certification (Part 1&amp;2)</th>
+      <td>CERT1, CERT2</td><td>Once</td>
+      <td colspan="8" class="tm-note">JHSC Members Only</td>
+    </tr>
+
+    <tr>
+      <th>JHSC Certification Refresher</th>
+      <td>CERTR</td><td>3 yr</td>
+      <td colspan="8" class="tm-note">JHSC Members Only</td>
+    </tr>
+
+    <tr>
+      <th>Ladder Safety</th>
+      <td>LADDER</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <th>Laser Safety</th>
+      <td>LASER</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Lock Out / Tag Out</th>
+      <td>LCKTAG</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Machine Guarding Awareness</th>
+      <td>MCHGRD</td><td>3 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Mould Awareness</th>
+      <td>MLDAWR</td><td>Once</td>
+      <td colspan="8" class="tm-note">Open to All Staff</td>
+    </tr>
+
+    <tr>
+      <th>Nanotechnology</th>
+      <td>NANOAW</td><td>Once</td>
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Noise Awareness</th>
+      <td>NSAWR</td><td>5 yr</td>
+      <td colspan="8" class="tm-note">All Staff where hearing protection is required</td>
+    </tr>
+
+    <tr>
+      <th>Radiation Safety Awareness</th>
+      <td><i>In-Person</i></td><td>Once</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>Respirator Fit Testing</th>
+      <td><i>In-Person</i></td><td>2 yr</td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td>
+      <td><span class="tm-diamond">X</span></td>
+      <td></td><td></td>
+    </tr>
+
+    <tr>
+      <th>SAFE Training (Slips, Trips &amp; Falls, Asbestos, Fire Safety, Ergonomics)</th>
+      <td>SAFE</td><td>5 yr</td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+    </tr>
+
+    <tr>
+      <th>Transportation of Dangerous Goods</th>
+      <td>TDG</td><td>3 yr</td>
+      <td></td><td></td><td></td><td></td><td></td><td></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <th>Violence &amp; Harassment Prevention in the Workplace</th>
+      <td>VHPW</td><td>3 yr</td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+    </tr>
+
+    <tr>
+      <th>WHMIS 2015 &dagger;</th>
+      <td>WHMS15</td><td>5 yr</td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+      <td><span class="tm-x">&#9679;</span></td>
+    </tr>
+
+    <tr>
+      <th>Working at Heights</th>
+      <td>WAH/WAHT</td><td>3 yr</td>
+      <td colspan="8" class="tm-note">All Faculty and Staff if working at heights</td>
+    </tr>
+
+    <tr>
+      <th>Workplace Inspections</th>
+      <td>WRKPI</td><td>Once</td>
+      <td colspan="8" class="tm-note">Open to All Staff</td>
+    </tr>
+
+  </tbody>
+</table>
+</div><!-- end .tm-table-wrap -->
+
+  <div class="tm-legend">
+    <strong>Legend:</strong>
+    <ul>
+      <li><b class="tm-x">&#9679;</b> &ndash; Mandatory</li>
+      <li><b class="tm-diamond">X</b> &ndash; Required if working with hazard or supervising staff working with the hazard.</li>
+      <li><b>**</b> &ndash; If located in the Hospital Hosted Location, complete fire safety for HSC and annual updates.</li>
+      <li><b>&dagger;</b> &ndash; As new products, equipment, and technology take place, training is required.</li>
+      <li><b>Frequency</b> column shows training frequency; may be more frequent as per OH&amp;S guidelines.</li>
+    </ul>
+    <p>Supervisors please note <span class="doc-ref">RMM 300</span>: Safety Training and Orientation. All undergraduate students shall have safety orientation training prior to commencing labs.</p>
+  </div>
+
+  </div><!-- end .training-matrix -->
+
+    <!-- remaining content below table -->
+
+  <br>
+  <h3>Additional Courses/Reading</h3>
+
+  <div class="training-matrix">
+    <div class="tm-table-wrap">
+      <table class="additional-courses-table">
+        <thead>
+          <tr>
+            <th rowspan="2" class="tm-note">Category</th>
+            <th rowspan="2" class="tm-note">Course</th>
+            <th colspan="8" class="tm-note">Roles</th>
+          </tr>
+          <tr>
+            <th>Academic &amp; Admin (inc. Grad Students)</th>
+            <th>Faculty (with Lab Research)</th>
+            <th>Faculty (without Lab Research)</th>
+            <th>Laboratory (all occupants)</th>
+            <th>Library</th>
+            <th>Supervisors</th>
+            <th>Campus Stores (ABB/HthSci)</th>
+            <th>Managers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2">Reading Material</th>
+            <td><a href="lab-safety-handbook.html">Lab Safety Handbook</a></td>
+            <td></td><td class="tm-x">A</td>
+            <td></td><td class="tm-x">&#9679;</td><td></td><td class="tm-x">&#9679;</td><td></td><td class="tm-diamond">X</td>
+          </tr>
+          <tr>
+            <td><a href="https://hr.mcmaster.ca/employees/health_safety_well-being/our-safety/risk-management-manuals-rmms/" target="_blank">Risk Management Manual</a></td>
+            <td></td><td class="tm-x">A</td>
+            <td></td><td class="tm-x">&#9679;</td><td></td><td class="tm-x">&#9679;</td><td></td><td class="tm-x">&#9679;</td>
+          </tr>
+          <tr>
+            <th rowspan="4">Non-UHS Training</th>
+            <td>CEDT Cleanroom Training</td>
+            <td></td><td class="tm-x">A</td>
+            <td></td><td></td><td></td><td class="tm-diamond">X</td><td></td><td class="tm-diamond">X</td>
+          </tr>
+          <tr>
+            <td><a href="#hazard-awareness">Hazard Orientation (Eng Phys Specific)</a></td>
+            <td></td><td class="tm-x">A</td>
+            <td class="tm-x">&#9679;</td><td></td><td></td><td class="tm-x">&#9679;</td><td></td><td class="tm-x">&#9679;</td>
+          </tr>
+          <tr>
+            <td>Machine Shop Training (Student Shop)</td>
+            <td></td><td class="tm-x">A</td>
+            <td></td><td></td><td></td><td class="tm-diamond">X</td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>X-Ray Safety (Health Physics)</td>
+            <td></td><td class="tm-x">A</td>
+            <td></td><td></td><td></td><td class="tm-diamond">X</td><td></td><td class="tm-diamond">X</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div class="tm-legend">
+        <strong>Legend</strong>
+        <ul>
+          <li><b class="tm-x">&#9679;</b> &ndash; Mandatory</li>
+          <li><b class="tm-diamond">X</b> &ndash; Required if working with hazard or supervising staff working with the hazard.</li>
+          <li><b class="tm-x">A</b> &ndash; Take the first class offered after your start date, and always before working with the relevant hazard.</li>
+        </ul>
+      </div>    
+</div>
+
+  <div style="padding-top: 10px;">
+
+      <p>Students and staff should ask their supervisor when mandatory courses are being offered. Report your completion of each training to your supervisor for record keeping purposes.</p><br>
+
+      <h3 id="hazard-awareness">Engineering Physics-Specific Hazard Orientation Safety Training</h3>
+      <p><b>Instructors:</b> Catie Luck and Reza Shahzadeh
+        <br><b>Dates:</b> January, May, September
+        <br><b>Next Offered:</b> September 2026
+        <br><b>Scope:</b> Addresses identification of various hazards encountered working in CEDT or Eng Phys facilities. Sadly, the course no longer includes a viewing of the classic lab safety video "Flashpoint", but there will be a brief quiz and group discussion following the instructional session.
+        <br><b>Downloads:</b> <a href="https://www.mcmaster.ca/CEDTsafety/research_hazards_form_2007.pdf" target="_blank">Hazard Orientation Safety Report form.</a></p>
+        <p><b>Outline:</b></p>
+        <ul>
+          <li>Overview of the McMaster University Safety Program</li>
+          <li>Examples of real incidents that have occurred</li>
+          <li>Review of the CEDT / Eng Phys Safety website and related resources</li>
+          <li>Brief quiz and discussion</li>
+        </ul>
+
+    </div><!-- end remaining content -->
+    </main>
+</body>
+</html>

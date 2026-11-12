@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- ------------------------------------------------------------
+     TEMPLATE
+
+     The masthead, left sidebar nav, and footer live in
+     shared-layout.js, which builds them at runtime around each
+     page's <main id="main"> element. Edit that file once and
+     every page picks up the change.
+
+     To start a new page, copy the skeleton below.
+     ------------------------------------------------------------ -->
+
+<!-- ------------------------------------------------------------
+     HOW THIS SITE WORKS.
+
+     The .html file is the only thing the browser gets. All the building
+     that happens is two Python scripts below.
+
+     I've addressed some possible uncertainties below.
+
+     THE NAV ISN'T IN THE PAGE HTML.
+     Open any real page and the <body> is just <main id="main"> and a
+     <noscript> fallback. shared-layout.js builds the masthead, red
+     ribbon, sidebar, and footer at runtime and wraps them around
+     whatever <main> it finds. Change the nav once in that file,
+     every page picks it up. Before this it was ~90 lines of
+     identical markup hand-copied into all 34 pages, which is exactly
+     as error-prone as it sounds. The trade: if JS doesn't run, the
+     entire nav is gone and you're left with a plain link back home.
+     Decided that was an acceptable trade for this site, not an
+     oversight — worth revisiting if that ever stops being true.
+
+     SEARCH IS TWO UNRELATED THINGS THAT SHARE THE WORD "SEARCH."
+     Site-wide search (top-right) reads assets/search-index.js, a
+     plain JSON file written by build-search-index.py. It does not
+     regenerate itself. Edit page content and forget to re-run it,
+     and search quietly returns stale results. There's a git
+     pre-commit hook (.git/hooks/pre-commit — local only, not
+     tracked, won't exist on a fresh clone) that runs
+     `build-search-index.py --check` and refuses the commit if the
+     index is stale, so in practice this is hard to actually mess up
+     on this machine.
+     search.js, despite the name, doesn't search anything anymore —
+     it just bolds whichever sidebar link matches the current page.
+     Left the filename alone rather than touch a <script> tag on
+     every page for no functional reason.
+
+     check-links.py CAN'T SEE THE SHARED NAV ON ITS OWN.
+     It only reads literal <a> tags out of each page's HTML, and
+     since the nav isn't literal HTML anymore, it separately pulls
+     the same three link lists back out of shared-layout.js's source
+     with a regex and checks those too. If you restructure how that
+     file builds its HTML strings, that extraction will silently stop
+     working — it's pattern-matching against the current variable
+     layout, not an actual JS parser.
+
+     PICTOGRAMS ARE SOURCED, NOT DRAWN.
+     Everything under assets/images/pictograms/ is cropped from real
+     ISO 7010 / GHS reference images, not sketched by hand. If a new
+     one is needed, go find the actual standard symbol first.
+
+     A FEW THINGS THAT LOOK LIKE BUGS AND AREN'T.
+     A strict validator will flag unclosed <li>/<p>/<td> in a couple
+     pages (lab-safety-handbook, local-site-template, supervisor-
+     responsibilities). Those are legal optional end tags in HTML5,
+     checked and left alone on purpose.
+
+     STILL OPEN.
+     sitemap.xml doesn't exist yet — needs a real domain first, a
+     sitemap with wrong URLs is worse than none. 404.html exists but
+     nothing on the server actually routes to it yet; that's host
+     config, outside this repo. And the linked RMM/policy PDFs on
+     hr.mcmaster.ca and SharePoint have never been accessibility-
+     checked — outside this repo too, but still part of the site as
+     far as anyone using it is concerned.
+     ------------------------------------------------------------ -->
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEDT / Engineering Physics — Page Title</title>
+<meta name="description" content="One or two sentences describing this page, for search engines and link previews.">
+
+<!-- Author: Carter Yott, Summer 2026. Based on the previous CEDT Safety site (mcmaster.ca/CEDTsafety) by Graham Pearson, with support from Nebile Isik Goktas and especially, Doris Stevanovic. -->
+
+<!-- Shared stylesheet. Edit styles.css once; every page updates. -->
+<link rel="icon" href="assets/images/cedt-logo.png">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Shared scripts: page layout + current-page highlight + site-wide search. `defer` lets the HTML parse first. -->
+<script src="shared-layout.js" defer></script>
+<script src="search.js" defer></script>
+<script src="assets/search-index.js" defer></script>
+<script src="sitesearch.js" defer></script>
+
+</head>
+
+<body>
+<noscript><p>This site needs JavaScript enabled to display its navigation menu and search. <a href="index.html">Return to the home page</a> or visit <a href="https://www.mcmaster.ca/">McMaster University</a>.</p></noscript>
+<main id="main" class="pagecontent">
+
+      <h1>Page Title</h1>
+
+      <p>Page content goes here.</p>
+
+</main>
+</body>
+</html>
